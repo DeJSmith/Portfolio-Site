@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBar from "./components/Nav";
+import SummarySection from "./components/SummarySection";
+import ProjectsSection from "./components/ProjectsSection";
+import { OpaqueText } from "./elements/globalElements";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          margin: "auto",
+          color: "white",
+          width: "100%",
+          height: "50%",
+          textAlign: "center",
+        }}
+      >
+        Yeet
+      </div>
+
+      <OpaqueText>
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <SummarySection />
+        <ProjectsSection />
+      </OpaqueText>
     </div>
   );
 }

@@ -1,10 +1,47 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 0rem 4rem;
+  height: max-content;
+  margin: 0rem auto;
+  overflow-x: hidden;
+
+  @media only screen and (max-width: 1500px) {
+    max-width: 1200px;
+    padding: 0rem 3rem;
+  }
+
+  @media only screen and (max-width: 1280px) {
+    max-width: calc(1280px * 0.85);
+    padding: 0rem 3rem;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    max-width: calc(1024px * 0.85);
+    padding: 0rem 3rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: calc(768px * 0.85);
+  }
+
+  @media only screen and (max-width: 640px) {
+    max-width: calc(640px * 0.85);
+  }
+`;
+
 export const OpaqueText = styled.div`
-  background: #22223b;
+  //background: #22223b;
+  background: #fff;
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   width: 100%;
   height: max-content;
+  min-height: 100vh;
   overflow: hidden;
   position: absolute;
   z-index: -99;
@@ -28,8 +65,7 @@ export const OpaqueText = styled.div`
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    animation: animate 25s linear infinite;
+    animation: animate 40s linear infinite;
     bottom: -150px;
   }
 
@@ -38,6 +74,7 @@ export const OpaqueText = styled.div`
     width: 80px;
     height: 80px;
     animation-delay: 0s;
+    background: rgba(254, 228, 64, 0.2);
   }
 
   & .circles li:nth-child(2) {
@@ -46,6 +83,7 @@ export const OpaqueText = styled.div`
     height: 20px;
     animation-delay: 2s;
     animation-duration: 12s;
+    background: rgba(96, 206, 241, 0.2);
   }
 
   & .circles li:nth-child(3) {
@@ -53,6 +91,7 @@ export const OpaqueText = styled.div`
     width: 20px;
     height: 20px;
     animation-delay: 4s;
+    background: rgba(254, 228, 64, 0.2);
   }
 
   & .circles li:nth-child(4) {
@@ -61,6 +100,7 @@ export const OpaqueText = styled.div`
     height: 60px;
     animation-delay: 0s;
     animation-duration: 18s;
+    background: rgba(247, 37, 133, 0.2);
   }
 
   & .circles li:nth-child(5) {
@@ -68,6 +108,7 @@ export const OpaqueText = styled.div`
     width: 20px;
     height: 20px;
     animation-delay: 0s;
+    background: rgba(96, 206, 241, 0.2);
   }
 
   & .circles li:nth-child(6) {
@@ -75,6 +116,7 @@ export const OpaqueText = styled.div`
     width: 110px;
     height: 110px;
     animation-delay: 3s;
+    background: rgba(254, 228, 64, 0.2);
   }
 
   & .circles li:nth-child(7) {
@@ -82,14 +124,16 @@ export const OpaqueText = styled.div`
     width: 150px;
     height: 150px;
     animation-delay: 7s;
+    background: rgba(247, 37, 133, 0.2);
   }
 
   & .circles li:nth-child(8) {
     left: 50%;
     width: 25px;
     height: 25px;
-    animation-delay: 15s;
+    animation-delay: 10s;
     animation-duration: 45s;
+    background: rgba(96, 206, 241, 0.2);
   }
 
   & .circles li:nth-child(9) {
@@ -98,27 +142,74 @@ export const OpaqueText = styled.div`
     height: 15px;
     animation-delay: 2s;
     animation-duration: 35s;
+    background: rgba(254, 228, 64, 0.2);
   }
 
   & .circles li:nth-child(10) {
     left: 85%;
-    width: 150px;
-    height: 150px;
+    width: 35px;
+    height: 35px;
     animation-delay: 0s;
-    animation-duration: 11s;
+    animation-duration: 23s;
+    background: rgba(247, 37, 133, 0.2);
+  }
+
+  & .circles li:nth-child(11) {
+    left: 95%;
+    width: 50px;
+    height: 50px;
+    animation-delay: 0s;
+    animation-duration: 9s;
+    background: rgba(254, 228, 64, 0.2);
+  }
+
+  & .circles li:nth-child(12) {
+    left: 90%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 1s;
+    animation-duration: 17;
+    background: rgba(247, 37, 133, 0.2);
+  }
+
+  & .circles li:nth-child(13) {
+    left: 10%;
+    width: 10px;
+    height: 10px;
+    animation-delay: 9s;
+    animation-duration: 44s;
+    background: rgba(96, 206, 241, 0.2);
+  }
+
+  & .circles li:nth-child(14) {
+    left: 60%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 10s;
+    animation-duration: 30s;
+    background: rgba(247, 37, 133, 0.2);
+  }
+
+  & .circles li:nth-child(15) {
+    left: 5%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 3s;
+    animation-duration: 12s;
+    background: rgba(96, 206, 241, 0.2);
   }
 
   @keyframes animate {
     0% {
       transform: translateY(0) rotate(0deg);
-      opacity: 1;
       border-radius: 0;
+      opacity: 1;
     }
 
     100% {
-      transform: translateY(-1000px) rotate(720deg);
-      opacity: 0;
+      transform: translateY(-2000px) rotate(720deg);
       border-radius: 50%;
+      opacity: 0.6;
     }
   }
 `;

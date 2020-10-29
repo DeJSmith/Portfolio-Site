@@ -2,19 +2,21 @@ import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import ProfileImage from "../../assets/ProfileImage.jpg";
 import { FaGithub } from "react-icons/fa";
+import theme from "../../theme/theme";
 
 export const NavBar = styled.nav`
-  color: black;
-  background: #363852;
+  background: ${theme.colorPrimary};
   font-size: 1rem;
   position: fixed;
   height: 100vh;
-  width: 10rem;
+  width: 12%;
+  min-width: 11rem;
   z-index: 10;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  box-shadow: 5px 5px 40px rgba(255, 150, 180, 0.4);
+  //box-shadow: 5px 5px 40px rgba(255, 150, 180, 0.4);
+  box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.4);
 `;
 
 export const NavLink = styled.a`
@@ -22,25 +24,25 @@ export const NavLink = styled.a`
   font-size: inherit;
   text-decoration: none;
   display: flex;
-  align-items: center;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  text-align: left;
 
   &:after {
     background: none repeat scroll 0 0 transparent;
     content: "";
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
     display: block;
     height: 1px;
     left: 10%;
     position: absolute;
-    background: #f72585;
+    background: ${theme.colorSecondary};
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }
 
   &.active {
-    color: #4cc9f0;
+    color: ${theme.colorPrimary};
   }
 
   &:hover {
@@ -100,7 +102,7 @@ export const GitIcon = styled(FaGithub)`
   padding: 0;
 
   &:hover {
-    color: #f72585;
+    color: ${theme.colorSecondary};
     transform: scale(1.2);
     transition: all ease-in-out 0.5s;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8),

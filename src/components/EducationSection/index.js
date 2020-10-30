@@ -7,7 +7,7 @@ import { SectionTitle, FlexSection } from "../../elements/globalElements";
 
 const EducationSection = () => {
   return (
-    <FlexSection>
+    <FlexSection id="education">
       <SectionTitle>Education</SectionTitle>
       <div
         style={{

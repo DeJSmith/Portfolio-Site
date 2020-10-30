@@ -4,15 +4,13 @@ import {
   SectionTitle,
   FlexSection,
 } from "../../elements/globalElements";
-import theme from "../../theme/theme";
-import Laptop from "../../assets/coding.png";
 import Job from "../../assets/job.svg";
 
 const SummarySection = () => {
   const open = "<";
   const close = "/>";
   return (
-    <FlexSection>
+    <FlexSection id="profile">
       <SectionTitle>Profile</SectionTitle>
       <div
         style={{
@@ -24,7 +22,7 @@ const SummarySection = () => {
         <div style={{ margin: "auto" }}>
           <br />
           <strong style={{ fontSize: "1.5rem" }}>{open}</strong>
-          <p>
+          <p style={{ marginLeft: "2rem" }}>
             {" "}
             I am a recent computer science graduate from the University of
             Canterbury with a passion for learning and problem solving. I am

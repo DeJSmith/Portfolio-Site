@@ -8,6 +8,7 @@ import EducationSection from "./components/EducationSection";
 import Spinner from "./components/Spinner";
 import { OpaqueBg, Container } from "./elements/globalElements";
 import axios from "axios";
+import { repositories, repoDetails } from "./data/repos";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -15,25 +16,10 @@ function App() {
 
   useEffect(() => {
     console.log(process.env.REACT_APP_GITHUB_CLIENT_ID);
-    // getProfile()
-    //   .then((data) => {
-    //     console.log(data);
-    //     setProfile(data);
-    //     getRepos().then((repoData) => {
-    //       setRepos(repoData);
-    //     })
-    //       .catch((fail) => {
-    //         console.log(fail);
-    //       })
-    //     setLoading(false);
-    //   })
-    //   .catch((fail) => {
-    //     console.log(fail);
-    //   });
 
     getRepos()
       .then((repoData) => {
-        setRepos(repoData);
+        filterRepos(repoData);
         setLoading(false);
         console.log(repoData);
       })
@@ -41,17 +27,6 @@ function App() {
         console.log(fail);
       });
   }, []);
-
-  const getProfile = () => {
-    return new Promise(async (resolve, reject) => {
-      const res = await axios.get(`https://api.github.com/users/DeJSmith`);
-      if (res) {
-        resolve(res.data);
-      } else {
-        reject("Something went wrong");
-      }
-    });
-  };
 
   const getRepos = () => {
     return new Promise(async (resolve, reject) => {
@@ -64,6 +39,22 @@ function App() {
         reject("Something went wrong");
       }
     });
+  };
+
+  const filterRepos = (repoData) => {
+    repoData = repoData.filter((repo) => {
+      if (repositories.includes(repo.name)) {
+        repo["live"] = repoDetails[repo.name].live;
+        repo["repoName"] = repoDetails[repo.name].repoName;
+        repo["live_url"] = repoDetails[repo.name].live_url;
+        return repo;
+      }
+      return;
+    });
+
+    console.log(repoData);
+
+    setRepos(repoData);
   };
 
   return (
@@ -104,10 +95,12 @@ function App() {
               <Spinner />
             ) : (
               <Fragment>
-                <HeroSection />
+                <HeroSection id="top" />
+
                 <SummarySection />
-                <ProjectsSection repoData={repos} />
+
                 <EducationSection />
+                <ProjectsSection repoData={repos} />
               </Fragment>
             )}
           </Container>

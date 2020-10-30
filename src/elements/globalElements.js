@@ -6,11 +6,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: 80%;
-
+  width: 80%;
   height: max-content;
   margin: 0rem auto;
-  overflow: hidden;
 
   @media only screen and (max-width: 1500px) {
     max-width: 80%;
@@ -421,7 +419,8 @@ export const SectionTitle = styled.h1`
 `;
 
 export const FlexSection = styled.section`
-  height: 100vh;
+  max-height: 200vh;
   display: flex;
   flex-direction: column;
+  margin-bottom: 5rem;
 `;

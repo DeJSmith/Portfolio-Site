@@ -3,6 +3,7 @@ import { FaBars } from "react-icons/fa";
 import ProfileImage from "../../assets/ProfileImage.jpg";
 import { FaGithub } from "react-icons/fa";
 import theme from "../../theme/theme";
+import { Link } from "react-scroll";
 
 export const NavBar = styled.nav`
   background: ${theme.colorPrimary};
@@ -19,7 +20,7 @@ export const NavBar = styled.nav`
   box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.4);
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled(Link)`
   color: white;
   font-size: inherit;
   text-decoration: none;
@@ -42,7 +43,12 @@ export const NavLink = styled.a`
   }
 
   &.active {
-    color: ${theme.colorPrimary};
+    text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8),
+      0 -4px 15px rgba(255, 255, 255, 0.5);
+
+    &:after {
+      width: 80%;
+    }
   }
 
   &:hover {

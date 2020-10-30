@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavBar, NavLink, NavMenu, Bars, GitIcon } from "./NavElements";
 import { TerminalIcon, TerminalText } from "../../elements/globalElements";
 import ProfileImage from "../../assets/ProfileImage.jpg";
 import { FaGraduationCap, FaProjectDiagram, FaBookOpen } from "react-icons/fa";
+import {
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 import { MdEmail } from "react-icons/md";
 import theme from "../../theme/theme";
 
 const Nav = () => {
+  useEffect(() => {
+    Events.scrollEvent.register("begin", function () {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register("end", function () {
+      console.log("end", arguments);
+    });
+  }, []);
+
   return (
     <NavBar>
       <img
@@ -29,21 +45,21 @@ const Nav = () => {
 
       <Bars />
       <NavMenu>
-        <NavLink>
+        <NavLink to="profile" spy={true} smooth={true} duration={500}>
           <FaBookOpen
             style={{ marginRight: ".5rem", color: `${theme.colorSecondary}` }}
           />
-          Summary
+          Profile
         </NavLink>
 
-        <NavLink>
+        <NavLink to="education" spy={true} smooth={true} duration={500}>
           <FaGraduationCap
             style={{ marginRight: ".5rem", color: `${theme.colorSecondary}` }}
           />{" "}
           Education
         </NavLink>
 
-        <NavLink>
+        <NavLink to="projects" spy={true} smooth={true} duration={500}>
           {" "}
           <FaProjectDiagram
             style={{ marginRight: ".5rem", color: `${theme.colorSecondary}` }}
@@ -51,7 +67,7 @@ const Nav = () => {
           Projects
         </NavLink>
 
-        <NavLink>
+        <NavLink to="">
           <MdEmail
             style={{ marginRight: ".5rem", color: `${theme.colorSecondary}` }}
           />

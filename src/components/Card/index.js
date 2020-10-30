@@ -1,22 +1,26 @@
 import React from "react";
-import styled from "styled-components";
+import { CardStyled } from "./CardElements";
+import { ButtonOutline } from "../../elements/globalElements";
+import theme from "../../theme/theme";
 
-const CardDiv = styled.div`
-  background-color: #fff;
-  color: #363852;
-  //box-shadow: 5px 5px 40px rgba(255, 150, 180, 0.4);
-  box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  margin: auto;
-  color: white;
-  width: 50%;
-  height: min-content;
-  padding: 5rem;
-  border-radius: 10px;
-`;
+const Card = ({ children, repo }) => {
+  const border = { border: `5px solid ${theme.colorSecondary}` };
+  return (
+    <CardStyled style={repo.live ? border : {}}>
+      {children}
 
-const Card = (children) => {
-  return <CardDiv>{children}</CardDiv>;
+      <p className="title">{repo.name}</p>
+
+      <div className="text">
+        {repo.description}
+        <br />
+        <br />
+        <a href={repo.html_url}>
+          <ButtonOutline>Veiw Repo</ButtonOutline>
+        </a>
+      </div>
+    </CardStyled>
+  );
 };
 
 export default Card;

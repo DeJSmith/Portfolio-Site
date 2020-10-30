@@ -1,17 +1,38 @@
 import React, { useEffect, Fragment } from "react";
-import ProjectCard from "../ProjectCard";
-
+import Card from "../Card";
+import theme from "../../theme/theme";
+import { BsCodeSlash } from "react-icons/bs";
 import { ProjectGrid } from "./PorjectSectionElements";
-
-import Stack from "../CardStack";
-import CardStack from "../CardStack";
+import { SectionTitle, FlexSection } from "../../elements/globalElements";
 
 const ProjectsSection = ({ repoData }) => {
+  const liveRepos = ["AuctionHouse"];
   return (
-    <section>
-      <h1>Projects</h1>
-      <CardStack repos={repoData}></CardStack>
-    </section>
+    <FlexSection
+      style={{
+        marginBottom: "5rem",
+      }}
+    >
+      <SectionTitle>Projects</SectionTitle>
+      <ProjectGrid>
+        {repoData.map((repo, index) => {
+          if (liveRepos.includes(repo.name)) {
+            console.log(repo.name);
+            repo["live"] = true;
+          }
+          if (index < 6) {
+            return (
+              <Card key={index} repo={repo}>
+                <BsCodeSlash
+                  className="icon"
+                  style={{ width: "3rem", height: "auto" }}
+                />
+              </Card>
+            );
+          }
+        })}
+      </ProjectGrid>
+    </FlexSection>
   );
 };
 

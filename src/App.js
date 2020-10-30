@@ -3,8 +3,10 @@ import "./App.css";
 import NavBar from "./components/Nav";
 import SummarySection from "./components/SummarySection";
 import ProjectsSection from "./components/ProjectsSection";
+import HeroSection from "./components/Hero";
+import EducationSection from "./components/EducationSection";
 import Spinner from "./components/Spinner";
-import { OpaqueText, Container } from "./elements/globalElements";
+import { OpaqueBg, Container } from "./elements/globalElements";
 import axios from "axios";
 
 function App() {
@@ -68,9 +70,19 @@ function App() {
     <div className="App">
       <NavBar />
       <div></div>
-      <div style={{ width: "100%", height: "100%", position: "relative" }}>
-        <OpaqueText>
+      <div>
+        <OpaqueBg>
           <ul className="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
             <li></li>
             <li></li>
             <li></li>
@@ -92,12 +104,14 @@ function App() {
               <Spinner />
             ) : (
               <Fragment>
+                <HeroSection />
                 <SummarySection />
                 <ProjectsSection repoData={repos} />
+                <EducationSection />
               </Fragment>
             )}
           </Container>
-        </OpaqueText>
+        </OpaqueBg>
       </div>
     </div>
   );

@@ -9,8 +9,8 @@ export const NavBar = styled.nav`
   font-size: 1rem;
   position: fixed;
   height: 100vh;
-  width: 12%;
-  min-width: 11rem;
+  width: 12rem;
+  min-width: 12rem;
   z-index: 10;
   display: flex;
   justify-content: space-around;

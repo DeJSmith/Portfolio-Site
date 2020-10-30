@@ -1,27 +1,27 @@
 import React from "react";
-import { FaLaptopCode } from "react-icons/fa";
+import {
+  FloatingImg,
+  SectionTitle,
+  FlexSection,
+} from "../../elements/globalElements";
 import theme from "../../theme/theme";
-import { Shroud } from "./SummarySectionElements";
+import Laptop from "../../assets/coding.png";
+import Job from "../../assets/job.svg";
 
 const SummarySection = () => {
   const open = "<";
   const close = "/>";
   return (
-    <section style={{ height: "100vh", width: "100%" }}>
-      <div style={{ color: `${theme.colorPrimary}` }}>
-        <FaLaptopCode
-          style={{
-            height: "12rem",
-            width: "12rem",
-            color: `${theme.colorPrimary}`,
-          }}
-        />{" "}
-        <div>
-          <strong
-            style={{ color: `${theme.colorSecondary}`, textAlign: "left" }}
-          >
-            Summary
-          </strong>
+    <FlexSection>
+      <SectionTitle>Profile</SectionTitle>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "3fr 2fr",
+          margin: "auto",
+        }}
+      >
+        <div style={{ margin: "auto" }}>
           <br />
           <strong style={{ fontSize: "1.5rem" }}>{open}</strong>
           <p>
@@ -41,8 +41,11 @@ const SummarySection = () => {
           </p>
           <strong style={{ fontSize: "1.5rem", right: "0" }}>{close}</strong>
         </div>
+        <FloatingImg>
+          <img src={Job} />{" "}
+        </FloatingImg>
       </div>
-    </section>
+    </FlexSection>
   );
 };
 

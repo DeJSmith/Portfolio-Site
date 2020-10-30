@@ -3,6 +3,6 @@
   display: grid;
   grid-template-columns: 11rem calc(100vw - 11rem);
   grid-template-rows: min-content;
-  height: 100vh;
+  height: auto;
   width: 100%;
 }

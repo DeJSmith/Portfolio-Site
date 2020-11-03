@@ -21,20 +21,14 @@ const ProjectsSection = ({ repoData }) => {
         {repoData.map((repo, index) => {
           return (
             <Card key={index} repo={repo}>
-              <BsCodeSlash
-                className="icon"
-                style={{ width: "3rem", height: "auto", padding: "1rem" }}
-              />
+              {repo.icon}
             </Card>
           );
         })}
         {privateRepos.map((repo, index) => {
           return (
             <Card key={index} repo={repo}>
-              <BsCodeSlash
-                className="icon"
-                style={{ width: "3rem", height: "auto", padding: "1rem" }}
-              />
+              {repo.icon}
             </Card>
           );
         })}

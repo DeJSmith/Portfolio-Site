@@ -6,17 +6,17 @@ import styled, { css, keyframes } from "styled-components";
 const Card = ({ children, repo }) => {
   const glow = keyframes`
     0% {
-        transform: scale(1);
+        
         box-shadow: 0 0 0 0 rgba(247, 137, 33, 0.7);
     }
     
     70% {
-        transform: scale(1.01);
-        box-shadow: 0 0 0 10px rgba(247, 137, 33, 0);
+        
+        box-shadow: 0 0 0 15px rgba(247, 137, 33, 0);
     }
     
     100% {
-        transform: scale(1);
+        
         box-shadow: 0 0 0 0 rgba(247, 137, 33, 0);
     }
   `;

@@ -1,16 +1,28 @@
 import React, { useEffect } from "react";
-import { NavBar, NavLink, NavMenu, Bars, GitIcon } from "./NavElements";
-import { TerminalIcon, TerminalText } from "../../elements/globalElements";
-import ProfileImage from "../../assets/ProfileImage.jpg";
-import { FaGraduationCap, FaProjectDiagram, FaBookOpen } from "react-icons/fa";
 import {
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+  NavBar,
+  NavLink,
+  NavMenu,
+  Bars,
+  GitIcon,
+  LinkedInIcon,
+} from "./NavElements";
+import {
+  TerminalIcon,
+  TerminalText,
+  NavText,
+} from "../../elements/globalElements";
+import ProfileImage from "../../assets/ProfileImage.jpg";
+import {
+  FaGraduationCap,
+  FaProjectDiagram,
+  FaBookOpen,
+  FaDownload,
+} from "react-icons/fa";
+import { Events, animateScroll as scroll } from "react-scroll";
 import { MdEmail } from "react-icons/md";
 import theme from "../../theme/theme";
+import CV_File from "../../files/Daniel_Smith_CV.pdf";
 
 const Nav = () => {
   useEffect(() => {
@@ -74,9 +86,25 @@ const Nav = () => {
           Contact Me
         </NavLink>
 
-        <a href="https://github.com/DeJSmith">
-          <GitIcon />
-        </a>
+        <NavText
+          href={CV_File}
+          style={{ textDecoration: "none", color: "white" }}
+          download
+        >
+          <FaDownload
+            style={{ marginRight: ".5rem", color: `${theme.colorSecondary}` }}
+          />{" "}
+          My CV
+        </NavText>
+        <div>
+          {" "}
+          <a href="https://github.com/DeJSmith">
+            <GitIcon />
+          </a>
+          <a href="https://www.linkedin.com/in/daniel-smith-3a54a9195/">
+            <LinkedInIcon />
+          </a>
+        </div>
       </NavMenu>
     </NavBar>
   );

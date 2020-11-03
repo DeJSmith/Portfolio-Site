@@ -424,3 +424,77 @@ export const FlexSection = styled.section`
   flex-direction: column;
   margin-bottom: 5rem;
 `;
+
+export const SkillsOrb = styled.div`
+  & .icon {
+    margin: 0 auto;
+    width: 100%;
+    height: 80px;
+    max-width: 80px;
+    background: linear-gradient(90deg, #f72585, 0%, #e12279 40%, #22223b 60%);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 0.8s ease;
+    background-position: 0px;
+    background-size: 200px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+  }
+
+  &:hover .icon {
+    background-position: -120px;
+    transition: all 0.3s ease;
+    color: ${theme.colorSecondary};
+  }
+
+  &:hover .icon i {
+    background: linear-gradient(90deg, #f72585, #e12279);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+`;
+
+export const NavText = styled.a`
+  color: white;
+  font-size: inherit;
+  text-decoration: none;
+  display: flex;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: left;
+
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    margin-top: 1.8rem;
+    display: block;
+    height: 1px;
+    left: 10%;
+    position: absolute;
+    background: ${theme.colorSecondary};
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+  &.active {
+    text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8),
+      0 -4px 15px rgba(255, 255, 255, 0.5);
+
+    &:after {
+      width: 80%;
+    }
+  }
+
+  &:hover {
+    text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8),
+      0 -4px 15px rgba(255, 255, 255, 0.5);
+
+    &:after {
+      width: 80%;
+    }
+  }
+`;

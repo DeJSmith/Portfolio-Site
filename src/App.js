@@ -5,6 +5,7 @@ import SummarySection from "./components/SummarySection";
 import ProjectsSection from "./components/ProjectsSection";
 import HeroSection from "./components/Hero";
 import EducationSection from "./components/EducationSection";
+import ContactSection from "./components/ContactSection";
 import Spinner from "./components/Spinner";
 import { OpaqueBg, Container } from "./elements/globalElements";
 import axios from "axios";
@@ -47,6 +48,7 @@ function App() {
         repo["live"] = repoDetails[repo.name].live;
         repo["repoName"] = repoDetails[repo.name].repoName;
         repo["live_url"] = repoDetails[repo.name].live_url;
+        repo["icon"] = repoDetails[repo.name].icon;
         return repo;
       }
       return;
@@ -104,6 +106,7 @@ function App() {
               </Fragment>
             )}
           </Container>
+          <ContactSection />
         </OpaqueBg>
       </div>
     </div>

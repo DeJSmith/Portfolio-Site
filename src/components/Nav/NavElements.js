@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { FaBars } from "react-icons/fa";
 import ProfileImage from "../../assets/ProfileImage.jpg";
-import { FaGithub } from "react-icons/fa";
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import theme from "../../theme/theme";
 import { Link } from "react-scroll";
+import { icons } from "react-icons/lib";
 
 export const NavBar = styled.nav`
   background: ${theme.colorPrimary};
@@ -98,20 +99,24 @@ export const Avatar = styled.div`
   object-fit: cover;
 `;
 
-export const GitIcon = styled(FaGithub)`
+const IconStyles = css`
   color: white;
-  width: 3rem;
+  width: 2.5rem;
   height: auto;
-  border-radius: 50%;
   cursor: pointer;
   margin: 0;
   padding: 0;
 
   &:hover {
     color: ${theme.colorSecondary};
-    transform: scale(1.2);
     transition: all ease-in-out 0.5s;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
-      0 0px 15px rgba(255, 255, 255, 0.5);
   }
+`;
+
+export const LinkedInIcon = styled(FaLinkedin)`
+  ${IconStyles}
+`;
+
+export const GitIcon = styled(FaGithubSquare)`
+  ${IconStyles}
 `;

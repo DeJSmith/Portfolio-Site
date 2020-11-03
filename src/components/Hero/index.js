@@ -2,6 +2,7 @@ import React from "react";
 import Thinking from "../../assets/thinking.svg";
 import Code from "../../assets/code.svg";
 import theme from "../../theme/theme";
+import StaticSite from "../../assets/staticSite.svg";
 
 const HeroSection = () => {
   return (
@@ -16,17 +17,16 @@ const HeroSection = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          marginBottom: "-15rem",
+          marginBottom: "-10rem",
         }}
       >
         <div
           style={{
-            marginBottom: "-15rem",
             display: "flex",
             flexDirection: "row",
+            justifyContent: "center",
             fontSize: "4rem",
             zIndex: "999",
-            marginLeft: "-3rem",
           }}
         >
           {" "}
@@ -36,19 +36,33 @@ const HeroSection = () => {
           <h1 style={{ color: theme.colorSecondary }}>Smith</h1>
         </div>
       </div>
-      <div style={{ margin: "auto 1rem", zIndex: "-1" }}>
+      <div style={{ margin: "auto", zIndex: "-1" }}>
         {" "}
         <img
-          src={Code}
+          src={StaticSite}
           style={{
             color: theme.colorSecondary,
-            margin: " 0 auto",
+
             height: "auto",
-            width: "60rem",
-            opacity: "0.9",
+            width: "50rem",
+            opacity: "0.8",
           }}
           alt=""
         />
+      </div>
+      <div
+        style={{
+          color: `${theme.colorPrimary}`,
+          fontSize: "1.5rem",
+          textAlign: "center",
+        }}
+      >
+        “The Web as I envisaged it, we have not seen it yet. The future is still
+        so much bigger than the past.”{" "}
+        <strong style={{ color: `${theme.colorSecondary}` }}>
+          {" "}
+          - Tim Burners-Lee
+        </strong>
       </div>
     </section>
   );

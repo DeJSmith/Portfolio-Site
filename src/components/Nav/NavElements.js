@@ -8,11 +8,11 @@ import { icons } from "react-icons/lib";
 
 export const NavBar = styled.nav`
   background: ${theme.colorPrimary};
-  font-size: 1rem;
+  font-size: 0.8rem;
   position: fixed;
   height: 100vh;
-  width: 12rem;
-  min-width: 12rem;
+  width: 5rem;
+  min-width: 5rem;
   z-index: 10;
   display: flex;
   justify-content: space-around;
@@ -29,6 +29,20 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-align: left;
+  padding: 1rem 0rem;
+
+  & .text {
+    display: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  & .icon {
+    transition: all 0.2s ease-in-out;
+    margin-right: 0.5rem;
+    color: ${theme.colorSecondary};
+    width: 2rem;
+    height: auto;
+  }
 
   &:after {
     background: none repeat scroll 0 0 transparent;
@@ -50,11 +64,27 @@ export const NavLink = styled(Link)`
     &:after {
       width: 80%;
     }
+
+    & .icon {
+      display: none;
+    }
+
+    & .text {
+      display: block;
+    }
   }
 
   &:hover {
     text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8),
       0 -4px 15px rgba(255, 255, 255, 0.5);
+
+    & .text {
+      display: block;
+    }
+
+    & .icon {
+      display: none;
+    }
 
     &:after {
       width: 80%;

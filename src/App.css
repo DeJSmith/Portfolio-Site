@@ -1,7 +1,7 @@
 .App {
   position: relative;
   display: grid;
-  grid-template-columns: 11rem calc(100vw - 11rem);
+  grid-template-columns: 5rem calc(100vw - 5rem);
   grid-template-rows: min-content;
   height: auto;
   width: 100%;

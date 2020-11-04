@@ -44,9 +44,7 @@ const SummarySection = () => {
           </p>
           <strong style={{ fontSize: "1.5rem", right: "0" }}>{close}</strong>
         </div>
-        <FloatingImg>
-          <img src={Job} />{" "}
-        </FloatingImg>
+        <FloatingImg>{theme.profileImg}</FloatingImg>
       </div>
       <div style={{ marginTop: "2rem" }}>
         <strong style={{ color: `${theme.colorPrimary}`, fontSize: "2rem" }}>

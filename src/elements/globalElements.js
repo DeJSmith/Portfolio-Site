@@ -333,7 +333,7 @@ export const TerminalText = styled.div`
   overflow: hidden;
   margin: 0;
   white-space: nowrap;
-  border-right: 2px solid #f72585;
+  border-right: 2px solid ${theme.colorSecondary};
   width: 0%;
 
   @keyframes type {
@@ -352,7 +352,7 @@ export const TerminalText = styled.div`
       border-color: transparent;
     }
     100% {
-      border-color: #f72585;
+      border-color: ${theme.colorSecondary};
     }
   }
 `;
@@ -431,7 +431,13 @@ export const SkillsOrb = styled.div`
     width: 100%;
     height: 80px;
     max-width: 80px;
-    background: linear-gradient(90deg, #f72585, 0%, #e12279 40%, #22223b 60%);
+    background: linear-gradient(
+      90deg,
+      ${theme.colorSecondary},
+      0%,
+      ${theme.colorSecondaryDark} 40%,
+      ${theme.colorTertiary} 60%
+    );
     border-radius: 100%;
     display: flex;
     justify-content: center;
@@ -450,7 +456,11 @@ export const SkillsOrb = styled.div`
   }
 
   &:hover .icon i {
-    background: linear-gradient(90deg, #f72585, #e12279);
+    background: linear-gradient(
+      90deg,
+      ${theme.colorSecondary},
+      ${theme.colorSecondaryDark}
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 1;
@@ -466,6 +476,19 @@ export const NavText = styled.a`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-align: left;
+
+  & .text {
+    display: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  & .icon {
+    transition: all 0.2s ease-in-out;
+    margin-right: 0.5rem;
+    color: ${theme.colorSecondary};
+    width: 2rem;
+    height: auto;
+  }
 
   &:after {
     background: none repeat scroll 0 0 transparent;
@@ -495,6 +518,14 @@ export const NavText = styled.a`
 
     &:after {
       width: 80%;
+    }
+
+    & .text {
+      display: block;
+    }
+
+    & .icon {
+      display: none;
     }
   }
 `;

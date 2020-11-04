@@ -36,20 +36,7 @@ const HeroSection = () => {
           <h1 style={{ color: theme.colorSecondary }}>Smith</h1>
         </div>
       </div>
-      <div style={{ margin: "auto", zIndex: "-1" }}>
-        {" "}
-        <img
-          src={StaticSite}
-          style={{
-            color: theme.colorSecondary,
-
-            height: "auto",
-            width: "50rem",
-            opacity: "0.8",
-          }}
-          alt=""
-        />
-      </div>
+      <div style={{ margin: "auto", zIndex: "-1" }}> {theme.heroImg}</div>
       <div
         style={{
           color: `${theme.colorPrimary}`,

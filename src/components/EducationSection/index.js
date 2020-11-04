@@ -16,7 +16,7 @@ const EducationSection = () => {
           margin: "auto",
         }}
       >
-        <img src={Post} style={{ width: "400px", height: "auto" }} />
+        {theme.educationImg}
 
         <div
           style={{

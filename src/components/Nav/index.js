@@ -37,53 +37,63 @@ const Nav = () => {
 
   return (
     <NavBar>
-      <img
-        src={ProfileImage}
-        style={{
-          margin: "1rem auto",
-          borderRadius: "5px",
-          width: "8rem",
-          height: "8rem",
-          objectFit: "cover",
-        }}
-      />
-      <p style={{ margin: "1rem auto", color: "white" }}>Daniel Smith</p>
+      <p style={{ margin: "1rem auto", color: "white", display: "none" }}>
+        Daniel Smith
+      </p>
       <div
         style={{ margin: "1rem auto", display: "flex", flexDirection: "row" }}
       >
-        <TerminalIcon>></TerminalIcon>
-        <TerminalText>Web Developer</TerminalText>
+        <div style={{ display: "none" }}>
+          <TerminalIcon>></TerminalIcon>
+          <TerminalText>Web Developer</TerminalText>
+        </div>
       </div>
 
       <Bars />
       <NavMenu>
         <NavLink to="profile" spy={true} smooth={true} duration={500}>
           <FaBookOpen
-            style={{ marginRight: ".5rem", color: `${theme.colorSecondary}` }}
+            className="icon"
+            style={{
+              marginRight: ".5rem",
+              color: `${theme.colorSecondary}`,
+              width: "2rem",
+              height: "auto",
+            }}
           />
-          Profile
+          <div className="text">Profile</div>
         </NavLink>
 
         <NavLink to="education" spy={true} smooth={true} duration={500}>
           <FaGraduationCap
-            style={{ marginRight: ".5rem", color: `${theme.colorSecondary}` }}
+            className="icon"
+            style={{
+              marginRight: ".5rem",
+              color: `${theme.colorSecondary}`,
+              width: "2rem",
+              height: "auto",
+            }}
           />{" "}
-          Education
+          <div className="text">Education</div>
         </NavLink>
 
         <NavLink to="projects" spy={true} smooth={true} duration={500}>
           {" "}
           <FaProjectDiagram
-            style={{ marginRight: ".5rem", color: `${theme.colorSecondary}` }}
+            className="icon"
+            style={{
+              marginRight: ".5rem",
+              color: `${theme.colorSecondary}`,
+              width: "2rem",
+              height: "auto",
+            }}
           />{" "}
-          Projects
+          <div className="text">Projects</div>
         </NavLink>
 
         <NavLink to="">
-          <MdEmail
-            style={{ marginRight: ".5rem", color: `${theme.colorSecondary}` }}
-          />
-          Contact Me
+          <MdEmail className="icon" style={{}} />
+          <div className="text">Contact Me</div>
         </NavLink>
 
         <NavText
@@ -92,11 +102,17 @@ const Nav = () => {
           download
         >
           <FaDownload
-            style={{ marginRight: ".5rem", color: `${theme.colorSecondary}` }}
+            className="icon"
+            style={{
+              marginRight: ".5rem",
+              color: `${theme.colorSecondary}`,
+              width: "2rem",
+              height: "auto",
+            }}
           />{" "}
-          My CV
+          <div className="text">CV</div>
         </NavText>
-        <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           {" "}
           <a href="https://github.com/DeJSmith">
             <GitIcon />

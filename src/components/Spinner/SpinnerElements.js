@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import theme from "../../theme/theme";
 
 export const Spin = styled.div`
   z-index: 9999;
-  color: #f72585;
+  color: ${theme.colorSecondary};
   font-size: 90px;
   text-indent: -9999em;
   overflow: hidden;

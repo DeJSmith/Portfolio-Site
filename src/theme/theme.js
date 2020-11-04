@@ -1,14 +1,89 @@
 import { ThemeConsumer } from "styled-components";
+import StaticSiteOrange from "../assets/staticSiteOrange.svg";
+import JobOrange from "../assets/jobOrange.svg";
+import postOrange from "../assets/postOrange.svg";
+import StaticSite from "../assets/staticSite.svg";
+import Job from "../assets/job.svg";
+import post from "../assets/Post.svg";
+
+// const theme = {
+//   colorPrimary: "#3f3d56",
+//   colorSecondary: "#52B788",
+//   colorTertiary: "#22223B",
+//   colorSecondaryDark: "#40916C",
+//   breakPointXs: "90%",
+//   breakPointSm: `640px`,
+//   breakPointMd: `768px`,
+//   breakPointLg: `1024px`,
+//   breakPointXl: `1280px`,
+// };
 
 const theme = {
   colorPrimary: "#3f3d56",
-  colorSecondary: "#f72585",
+  colorSecondary: "#FF8500",
   colorTertiary: "#22223B",
-  breakPointXs: "90%",
-  breakPointSm: `640px`,
-  breakPointMd: `768px`,
-  breakPointLg: `1024px`,
-  breakPointXl: `1280px`,
+  colorSecondaryDark: "#FF7900",
+  heroImg: (
+    <img
+      src={StaticSiteOrange}
+      style={{
+        color: "#FF8500",
+
+        height: "auto",
+        width: "50rem",
+        opacity: "0.8",
+      }}
+      alt=""
+    />
+  ),
+  profileImg: <img src={JobOrange} />,
+  educationImg: (
+    <img src={postOrange} style={{ width: "400px", height: "auto" }} />
+  ),
 };
+
+// const theme = {
+//   colorPrimary: "#3f3d56",
+//   colorSecondary: "#f72585",
+//   colorTertiary: "#22223B",
+//   colorSecondaryDark: "#e12279",
+//   heroImg: (
+//     <img
+//       src={StaticSite}
+//       style={{
+//         color: "#FF8500",
+
+//         height: "auto",
+//         width: "50rem",
+//         opacity: "0.8",
+//       }}
+//       alt=""
+//     />
+//   ),
+//   profileImg: <img src={Job} />,
+//   educationImg: <img src={post} style={{ width: "400px", height: "auto" }} />,
+// };
+
+// const theme = {
+//   colorPrimary: "#3f3d56",
+//   colorSecondary: "#DA1E37",
+//   colorTertiary: "#22223B",
+//   colorSecondaryDark: "#C71F37",
+//   heroImg: (
+//     <img
+//       src={StaticSite}
+//       style={{
+//         color: "#FF8500",
+
+//         height: "auto",
+//         width: "50rem",
+//         opacity: "0.8",
+//       }}
+//       alt=""
+//     />
+//   ),
+//   profileImg: <img src={Job} />,
+//   educationImg: <img src={post} style={{ width: "400px", height: "auto" }} />,
+// };
 
 export default theme;

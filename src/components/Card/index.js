@@ -51,7 +51,13 @@ const Card = ({ children, repo }) => {
       width: 100%;
       height: 80px;
       max-width: 80px;
-      background: linear-gradient(90deg, #f72585, 0%, #e12279 40%, #22223b 60%);
+      background: linear-gradient(
+        90deg,
+        ${theme.colorSecondary},
+        0%,
+        ${theme.colorSecondaryDark} 40%,
+        ${theme.colorTertiary} 60%
+      );
       border-radius: 100%;
       display: flex;
       justify-content: center;
@@ -113,7 +119,11 @@ const Card = ({ children, repo }) => {
     }
 
     &:hover .icon i {
-      background: linear-gradient(90deg, #f72585, #e12279);
+      background: linear-gradient(
+        90deg,
+        ${theme.colorSecondary},
+        ${theme.colorSecondaryDark}
+      );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       opacity: 1;

@@ -10,11 +10,14 @@ export const ProjectGrid = styled.div`
   column-gap: 4rem;
   row-gap: 4rem;
 
-  @media only screen and (max-width: 1500px) {
+  ${theme.media.md} {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media only screen and (max-width: 1050px) {
-    grid-template-columns: 1fr;
+  ${theme.media.sm} {
+    grid-template-columns: auto;
   }
+
+
+
 `;

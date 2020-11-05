@@ -6,18 +6,20 @@ import {
   Bars,
   GitIcon,
   LinkedInIcon,
+  Slider
 } from "./NavElements";
 import {
   TerminalIcon,
   TerminalText,
   NavText,
 } from "../../elements/globalElements";
-import ProfileImage from "../../assets/ProfileImage.jpg";
+
 import {
   FaGraduationCap,
   FaProjectDiagram,
   FaBookOpen,
   FaDownload,
+  FaBars
 } from "react-icons/fa";
 import { Events, animateScroll as scroll } from "react-scroll";
 import { MdEmail } from "react-icons/md";
@@ -36,82 +38,71 @@ const Nav = () => {
   }, []);
 
   return (
-    <NavBar>
-      <p style={{ margin: "1rem auto", color: "white", display: "none" }}>
-        Daniel Smith
-      </p>
-      <div
-        style={{ margin: "1rem auto", display: "flex", flexDirection: "row" }}
-      >
-        <div style={{ display: "none" }}>
-          <TerminalIcon>></TerminalIcon>
-          <TerminalText>Web Developer</TerminalText>
-        </div>
+    <Slider>
+      <FaBars className="menu-icon"/>
+    <NavBar className="nav">
+      <div style={{ margin: '.5rem', fontWeight:'700', fontSize: '2rem', color: theme.colorPrimary,  }}>
+        D<span style={{color: theme.colorSecondary}}>S</span>
       </div>
 
-      <Bars />
       <NavMenu>
-        <NavLink to="profile" spy={true} smooth={true} duration={500}>
+        <div>        
+          <NavLink to="profile" spy={true} smooth={true} duration={500}>
           <FaBookOpen
             className="icon"
-            style={{
-              marginRight: ".5rem",
-              color: `${theme.colorSecondary}`,
-              width: "2rem",
-              height: "auto",
-            }}
-          />
-          <div className="text">Profile</div>
-        </NavLink>
 
+          />
+          <b className="text">Profile</b>
+        </NavLink>
+        </div>
+
+
+        <div>
         <NavLink to="education" spy={true} smooth={true} duration={500}>
           <FaGraduationCap
             className="icon"
-            style={{
-              marginRight: ".5rem",
-              color: `${theme.colorSecondary}`,
-              width: "2rem",
-              height: "auto",
-            }}
-          />{" "}
-          <div className="text">Education</div>
-        </NavLink>
 
-        <NavLink to="projects" spy={true} smooth={true} duration={500}>
-          {" "}
+          />{" "}
+          <b className="text">Education</b>
+        </NavLink>
+        </div>
+
+
+        <div>        
+        <NavLink to="projects" spy={true} smooth={true} duration={500}>  
           <FaProjectDiagram
             className="icon"
-            style={{
-              marginRight: ".5rem",
-              color: `${theme.colorSecondary}`,
-              width: "2rem",
-              height: "auto",
-            }}
-          />{" "}
-          <div className="text">Projects</div>
-        </NavLink>
 
+          />{" "}
+          <b className="text">Projects</b>
+        </NavLink>
+        </div>
+
+        <div>
         <NavLink to="">
           <MdEmail className="icon" style={{}} />
-          <div className="text">Contact Me</div>
+          <b className="text">Contact Me</b>
         </NavLink>
+        </div>
 
-        <NavText
+        <div>        
+          <NavText
           href={CV_File}
-          style={{ textDecoration: "none", color: "white" }}
           download
         >
           <FaDownload
             className="icon"
             style={{
               marginRight: ".5rem",
-              color: `${theme.colorSecondary}`,
+              color: `${theme.colorTertiary}`,
               width: "2rem",
               height: "auto",
             }}
+
           />{" "}
-          <div className="text">CV</div>
-        </NavText>
+          <b className="text">CV</b>
+        </NavText></div>
+
         <div style={{ display: "flex", flexDirection: "column" }}>
           {" "}
           <a href="https://github.com/DeJSmith">
@@ -123,6 +114,7 @@ const Nav = () => {
         </div>
       </NavMenu>
     </NavBar>
+    </Slider>
   );
 };
 

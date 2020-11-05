@@ -9,7 +9,7 @@ import ContactSection from "./components/ContactSection";
 import Spinner from "./components/Spinner";
 import { OpaqueBg, Container } from "./elements/globalElements";
 import axios from "axios";
-import { repositories, repoDetails } from "./data/repos";
+import { repositories, repoDetails } from "./data/data";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -92,22 +92,22 @@ function App() {
             <li></li>
             <li></li>
           </ul>
-          <Container>
+        </OpaqueBg>
+        
             {loading ? (
               <Spinner />
             ) : (
               <Fragment>
-                <HeroSection id="top" />
-
-                <SummarySection />
-
-                <EducationSection />
-                <ProjectsSection repoData={repos} />
+                <Container>                
+                  <HeroSection id="top" />
+                  <SummarySection />
+                  <EducationSection />
+                  <ProjectsSection repoData={repos} /></Container>
+                
               </Fragment>
             )}
-          </Container>
-          <ContactSection />
-        </OpaqueBg>
+          
+          
       </div>
     </div>
   );

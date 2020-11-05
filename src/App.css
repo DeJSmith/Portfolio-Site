@@ -1,8 +1,18 @@
 .App {
   position: relative;
   display: grid;
-  grid-template-columns: 5rem calc(100vw - 5rem);
+  grid-template-columns: 80px auto;
   grid-template-rows: min-content;
   height: auto;
   width: 100%;
+}
+
+* ::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

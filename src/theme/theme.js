@@ -23,23 +23,20 @@ const theme = {
   colorSecondary: "#FF8500",
   colorTertiary: "#22223B",
   colorSecondaryDark: "#FF7900",
-  heroImg: (
-    <img
-      src={StaticSiteOrange}
-      style={{
-        color: "#FF8500",
+  heroImg: StaticSiteOrange,
 
-        height: "auto",
-        width: "50rem",
-        opacity: "0.8",
-      }}
-      alt=""
-    />
-  ),
   profileImg: <img src={JobOrange} />,
   educationImg: (
     <img src={postOrange} style={{ width: "400px", height: "auto" }} />
   ),
+  media : {
+    xs: '@media only screen and (max-width: 400px)',
+    sm: '@media only screen and (max-width: 640px)',
+    md: '@media only screen and (max-width: 768px)',
+    lg: '@media only screen and (max-width: 1024px)',
+    xl: '@media only screen and (max-width: 1280px)',
+    
+  }
 };
 
 // const theme = {

@@ -8,8 +8,10 @@ const ContactSection = () => {
       style={{
         backgroundColor: `${theme.colorTertiary}`,
         height: "20vh",
-        width: "100%",
+        width: "100vw",
         zIndex: "999",
+        position: 'absolute',
+        bottom:'0'
       }}
     ></div>
   );

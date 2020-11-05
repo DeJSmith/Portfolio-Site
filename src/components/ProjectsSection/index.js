@@ -4,7 +4,7 @@ import theme from "../../theme/theme";
 import { BsCodeSlash } from "react-icons/bs";
 import { ProjectGrid } from "./PorjectSectionElements";
 import { SectionTitle, FlexSection } from "../../elements/globalElements";
-import { privateRepos } from "../../data/repos";
+import { privateRepos } from "../../data/data";
 
 const ProjectsSection = ({ repoData }) => {
   const liveRepos = ["AuctionHouse"];

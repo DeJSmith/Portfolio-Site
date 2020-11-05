@@ -7,39 +7,50 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
+  max-width: 1280px;
   height: max-content;
   margin: 0rem auto;
 
-  @media only screen and (max-width: 1500px) {
-    max-width: 80%;
+
+
+  ${theme.media.xl} {
+    max-width: 1024px;
   }
 
-  @media only screen and (max-width: 1280px) {
-    max-width: 80%;
+ ${theme.media.lg} {
+    max-width: 768px;
   }
 
-  @media only screen and (max-width: 1024px) {
-    max-width: 80%;
-  }
-
-  @media only screen and (max-width: 768px) {
+  ${theme.media.md} {
     max-width: calc(768px * 0.8);
   }
 
-  @media only screen and (max-width: 640px) {
-    max-width: calc(640px * 0.8);
+  ${theme.media.sm} {
+    max-width: calc(640px);
+  }
+
+  ${theme.media.xs}{
+    max-width: calc(450px * 0.8);
   }
 `;
+
+export const TextWrapper = styled.div`
+  font-size: 1.2rem;
+
+  ${theme.media.lg}{
+    font-size: 1rem;
+  }
+`
 
 export const OpaqueBg = styled.div`
   //background: #22223b;
   background: #fff;
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
-  width: calc(100vw - 12rem);
-  height: max-content;
+  width: 100%;
+  height: 100%;
   min-height: 100vh;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   z-index: -99;
   top: 0;
   right: 0;
@@ -61,7 +72,7 @@ export const OpaqueBg = styled.div`
     list-style: none;
     width: 20px;
     height: 20px;
-    animation: animate 40s linear infinite;
+    animation: animate 10s linear infinite;
     bottom: -150px;
   }
 
@@ -83,7 +94,7 @@ export const OpaqueBg = styled.div`
   }
 
   & .circles li:nth-child(3) {
-    left: 70%;
+    left: 3%;
     width: 20px;
     height: 20px;
     animation-delay: 4s;
@@ -95,7 +106,7 @@ export const OpaqueBg = styled.div`
     width: 60px;
     height: 60px;
     animation-delay: 0s;
-    animation-duration: 18s;
+    animation-duration: 5s;
     background: rgba(247, 37, 133, 0.2);
   }
 
@@ -104,11 +115,12 @@ export const OpaqueBg = styled.div`
     width: 20px;
     height: 20px;
     animation-delay: 0s;
+    animation-duration: 4s;
     background: rgba(96, 206, 241, 0.2);
   }
 
   & .circles li:nth-child(6) {
-    left: 75%;
+    left: 5%;
     width: 110px;
     height: 110px;
     animation-delay: 3s;
@@ -128,7 +140,7 @@ export const OpaqueBg = styled.div`
     width: 25px;
     height: 25px;
     animation-delay: 10s;
-    animation-duration: 45s;
+    animation-duration: 15s;
     background: rgba(96, 206, 241, 0.2);
   }
 
@@ -137,7 +149,7 @@ export const OpaqueBg = styled.div`
     width: 15px;
     height: 15px;
     animation-delay: 2s;
-    animation-duration: 35s;
+    animation-duration: 13s;
     background: rgba(254, 228, 64, 0.2);
   }
 
@@ -146,7 +158,7 @@ export const OpaqueBg = styled.div`
     width: 35px;
     height: 35px;
     animation-delay: 0s;
-    animation-duration: 23s;
+    animation-duration: 12s;
     background: rgba(247, 37, 133, 0.2);
   }
 
@@ -164,16 +176,16 @@ export const OpaqueBg = styled.div`
     width: 20px;
     height: 20px;
     animation-delay: 1s;
-    animation-duration: 17;
-    background: rgba(247, 37, 133, 0.2);
+    animation-duration: 6s;
+    background: rgba(96, 206, 241, 0.2);
   }
 
   & .circles li:nth-child(13) {
-    left: 10%;
+    left: 1%;
     width: 10px;
     height: 10px;
     animation-delay: 9s;
-    animation-duration: 44s;
+    animation-duration: 15s;
     background: rgba(96, 206, 241, 0.2);
   }
 
@@ -182,7 +194,7 @@ export const OpaqueBg = styled.div`
     width: 90px;
     height: 90px;
     animation-delay: 10s;
-    animation-duration: 30s;
+    animation-duration: 14s;
     background: rgba(247, 37, 133, 0.2);
   }
 
@@ -191,7 +203,7 @@ export const OpaqueBg = styled.div`
     width: 80px;
     height: 80px;
     animation-delay: 3s;
-    animation-duration: 12s;
+    animation-duration: 3s;
     background: rgba(96, 206, 241, 0.2);
   }
 
@@ -200,8 +212,8 @@ export const OpaqueBg = styled.div`
     width: 35px;
     height: 35px;
     animation-delay: 2s;
-    animation-duration: 21s;
-    background: rgba(247, 37, 133, 0.2);
+    animation-duration: 12s;
+    background:rgba(96, 206, 241, 0.2);
   }
 
   & .circles li:nth-child(17) {
@@ -209,7 +221,7 @@ export const OpaqueBg = styled.div`
     width: 50px;
     height: 50px;
     animation-delay: 0s;
-    animation-duration: 13s;
+    animation-duration: 7s;
     background: rgba(254, 228, 64, 0.2);
   }
 
@@ -218,7 +230,7 @@ export const OpaqueBg = styled.div`
     width: 20px;
     height: 20px;
     animation-delay: 5s;
-    animation-duration: 17s;
+    animation-duration: 13s;
     background: rgba(247, 37, 133, 0.2);
   }
 
@@ -227,7 +239,7 @@ export const OpaqueBg = styled.div`
     width: 10px;
     height: 10px;
     animation-delay: 11s;
-    animation-duration: 28s;
+    animation-duration: 15s;
     background: rgba(96, 206, 241, 0.2);
   }
 
@@ -236,7 +248,7 @@ export const OpaqueBg = styled.div`
     width: 90px;
     height: 90px;
     animation-delay: 13s;
-    animation-duration: 32s;
+    animation-duration: 14s;
     background: rgba(247, 37, 133, 0.2);
   }
 
@@ -245,7 +257,7 @@ export const OpaqueBg = styled.div`
     width: 80px;
     height: 80px;
     animation-delay: 1s;
-    animation-duration: 15s;
+    animation-duration: 10s;
     background: rgba(96, 206, 241, 0.2);
   }
 
@@ -293,13 +305,13 @@ export const OpaqueBg = styled.div`
 
   @keyframes animate {
     0% {
-      transform: translateY(0) rotate(0deg);
+      transform: translateY(200px) rotate(0deg);
       border-radius: 0;
       opacity: 1;
     }
 
     100% {
-      transform: translateY(-500vh) rotate(720deg);
+      transform: translateY(-120vh) rotate(720deg);
       border-radius: 50%;
       opacity: 0;
     }
@@ -416,20 +428,33 @@ export const SectionTitle = styled.h1`
   color: ${theme.colorSecondary};
   font-size: 3rem;
   text-align: left;
+
+  ${theme.media.sm}{
+    font-size: 2rem;
+  }
 `;
 
 export const FlexSection = styled.section`
-  max-height: 200vh;
+  max-height: auto;
   display: flex;
   flex-direction: column;
   margin-bottom: 5rem;
+  width: 100%;
+  text-align: left;
 `;
 
 export const SkillsOrb = styled.div`
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-around;
+
   & .icon {
+    padding: 1rem;
     margin: 0 auto;
-    width: 100%;
-    height: 80px;
+    width: 3rem;
+    height: auto;
     max-width: 80px;
     background: linear-gradient(
       90deg,
@@ -469,63 +494,40 @@ export const SkillsOrb = styled.div`
 `;
 
 export const NavText = styled.a`
-  color: white;
+  color: ${theme.colorTertiary};
   font-size: inherit;
   text-decoration: none;
   display: flex;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-align: left;
-
+ 
   & .text {
-    display: none;
     transition: all 0.2s ease-in-out;
+    width: 0;
+    text-align: center;
+    transform: scaleX(0)
   }
 
   & .icon {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
     margin-right: 0.5rem;
-    color: ${theme.colorSecondary};
+    color: ${theme.colorPrimary};
     width: 2rem;
     height: auto;
   }
 
-  &:after {
-    background: none repeat scroll 0 0 transparent;
-    content: "";
-    margin-top: 1.8rem;
-    display: block;
-    height: 1px;
-    left: 10%;
-    position: absolute;
-    background: ${theme.colorSecondary};
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
 
   &.active {
-    text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8),
-      0 -4px 15px rgba(255, 255, 255, 0.5);
-
-    &:after {
-      width: 80%;
-    }
-  }
-
-  &:hover {
-    text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8),
-      0 -4px 15px rgba(255, 255, 255, 0.5);
-
-    &:after {
-      width: 80%;
+    & .icon {
+      transform: scale(0);
+      width: 0;
     }
 
     & .text {
-      display: block;
-    }
-
-    & .icon {
-      display: none;
+      width: auto;
+      transform: scaleX(1);
+      padding: 1rem;
     }
   }
 `;

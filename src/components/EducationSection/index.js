@@ -4,17 +4,14 @@ import Post from "../../assets/Post.svg";
 import theme from "../../theme/theme";
 import { FaGraduationCap } from "react-icons/fa";
 import { SectionTitle, FlexSection } from "../../elements/globalElements";
+import {EducationWrapper} from './EducationSectionElements';
 
 const EducationSection = () => {
   return (
     <FlexSection id="education">
       <SectionTitle>Education</SectionTitle>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "2fr 4fr",
-          margin: "auto",
-        }}
+      <EducationWrapper
+
       >
         {theme.educationImg}
 
@@ -90,7 +87,7 @@ const EducationSection = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </EducationWrapper>
     </FlexSection>
   );
 };

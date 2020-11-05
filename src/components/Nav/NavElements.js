@@ -4,90 +4,89 @@ import ProfileImage from "../../assets/ProfileImage.jpg";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import theme from "../../theme/theme";
 import { Link } from "react-scroll";
-import { icons } from "react-icons/lib";
+
+
+export const Slider = styled.div`
+  height: 100%;
+  margin: auto;
+  position: fixed;
+  width: 80px;
+  background-color: transparent;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & .menu-icon {
+    color: ${theme.colorPrimary};
+    height: auto;
+    width: 1.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    & .nav {
+      transform: translateX(0);
+    }
+    & .menu-icon {
+      transform: scale(0);
+      cursor: pointer;
+    }
+  }
+`
 
 export const NavBar = styled.nav`
-  background: ${theme.colorPrimary};
+  //background: ${theme.colorPrimary};
   font-size: 0.8rem;
-  position: fixed;
+  position: absolute;
   height: 100vh;
   width: 5rem;
   min-width: 5rem;
   z-index: 10;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  
+  transition: all .2s ease-in-out;
+  transform: translateX(-150px)
   //box-shadow: 5px 5px 40px rgba(255, 150, 180, 0.4);
-  box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.4);
+  //box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.4);
 `;
 
 export const NavLink = styled(Link)`
-  color: white;
+  color: ${theme.colorTertiary};
   font-size: inherit;
   text-decoration: none;
   display: flex;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-align: left;
-  padding: 1rem 0rem;
+ 
 
   & .text {
-    display: none;
     transition: all 0.2s ease-in-out;
+    width: 0;
+    text-align: center;
+    transform: scaleX(0)
   }
 
   & .icon {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
     margin-right: 0.5rem;
-    color: ${theme.colorSecondary};
+    color: ${theme.colorPrimary};
     width: 2rem;
     height: auto;
   }
 
-  &:after {
-    background: none repeat scroll 0 0 transparent;
-    content: "";
-    margin-top: 1.8rem;
-    display: block;
-    height: 1px;
-    left: 10%;
-    position: absolute;
-    background: ${theme.colorSecondary};
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
 
   &.active {
-    text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8),
-      0 -4px 15px rgba(255, 255, 255, 0.5);
-
-    &:after {
-      width: 80%;
-    }
-
     & .icon {
-      display: none;
+      transform: scale(0);
+      width: 0;
     }
 
     & .text {
-      display: block;
-    }
-  }
-
-  &:hover {
-    text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8),
-      0 -4px 15px rgba(255, 255, 255, 0.5);
-
-    & .text {
-      display: block;
-    }
-
-    & .icon {
-      display: none;
-    }
-
-    &:after {
-      width: 80%;
+      width: auto;
+      transform: scaleX(1);
+      padding: 1rem;
     }
   }
 `;
@@ -115,8 +114,20 @@ export const NavMenu = styled.div`
   height: 100%;
   justify-content: space-around;
 
-  @media screen and (max-width: 768px) {
-    display: none;
+  & div {
+    height: 3rem;
+  }
+
+  & div:hover a{
+    & .icon {
+      width: 0 !important;
+     
+    }
+    & .text{
+      transform: scaleX(1);
+      padding: 1rem;
+      width: auto;
+    }
   }
 `;
 

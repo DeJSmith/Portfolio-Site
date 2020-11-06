@@ -1,15 +1,19 @@
 import { useEffect, useState, Fragment } from "react";
+import { repositories, repoDetails } from "./data/data";
+import { OpaqueBg, Container } from "./elements/globalElements";
+import axios from "axios";
+
 import "./App.css";
+
 import NavBar from "./components/Nav";
 import SummarySection from "./components/SummarySection";
 import ProjectsSection from "./components/ProjectsSection";
 import HeroSection from "./components/Hero";
-import EducationSection from "./components/EducationSection";
+import SkillsSection from "./components/SkillsSection";
 import ContactSection from "./components/ContactSection";
 import Spinner from "./components/Spinner";
-import { OpaqueBg, Container } from "./elements/globalElements";
-import axios from "axios";
-import { repositories, repoDetails } from "./data/data";
+import LivePreview from './components/LivePreview';
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -49,6 +53,7 @@ function App() {
         repo["repoName"] = repoDetails[repo.name].repoName;
         repo["live_url"] = repoDetails[repo.name].live_url;
         repo["icon"] = repoDetails[repo.name].icon;
+        repo['technologies'] = repoDetails[repo.name].technologies;
         return repo;
       }
       return;
@@ -101,9 +106,10 @@ function App() {
                 <Container>                
                   <HeroSection id="top" />
                   <SummarySection />
-                  <EducationSection />
-                  <ProjectsSection repoData={repos} /></Container>
-                
+                  <SkillsSection />
+                  <ProjectsSection repoData={repos} />
+                  </Container>
+                  
               </Fragment>
             )}
           

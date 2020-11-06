@@ -1,4 +1,4 @@
-import { SiRedux, SiTypescript, SiCsharp } from "react-icons/si";
+import { SiRedux, SiTypescript, SiCsharp, SiUdemy } from "react-icons/si";
 import { DiJavascript} from "react-icons/di";
 import {
     FaAngular,
@@ -12,7 +12,7 @@ import {
 export const repoDetails = {
   AngularBackToFront: {
     repoName: "Angular Back To Front",
-    technologies: [],
+    technologies: ['Angular', 'Firebase'],
     live: true,
     live_url: "",
     icon: (
@@ -24,7 +24,7 @@ export const repoDetails = {
   },
   DatingApp: {
     repoName: "Dating App",
-    technologies: [],
+    technologies: ['C#', 'DotNetCore', 'Angular'],
     live: true,
     live_url: "",
     icon: (
@@ -36,7 +36,7 @@ export const repoDetails = {
   },
   DevConnector: {
     repoName: "Dev Connector",
-    technologies: [],
+    technologies: ['React', 'Redux', 'MongoDb', 'NodeJs', 'Express'],
     live: true,
     live_url: "",
     icon: (
@@ -48,7 +48,7 @@ export const repoDetails = {
   },
   AStarVisualisation: {
     repoName: "AStar Visualisation",
-    technologies: [],
+    technologies: ['P5Js'],
     live: true,
     live_url: "",
     icon: (
@@ -60,7 +60,7 @@ export const repoDetails = {
   },
   AuctionHouse: {
     repoName: "Auction House",
-    technologies: [],
+    technologies: ['VueJs', 'NodeJs', 'SQL', 'LAMP'],
     live: false,
     live_url: "",
     icon: (
@@ -83,7 +83,7 @@ export const repositories = [
 export const privateRepos = [
   {
     repoName: "PDT Website",
-    technologies: [],
+    technologies: ['React', 'SCSS', 'Redux', 'MongoDb', 'NodeJs', 'ChartJs'],
     live: true,
     live_url: "https://www.pdt.org.nz",
     icon: (
@@ -105,3 +105,11 @@ export const skills = [{name: "HTML5", icon: (<FaHtml5 className="icon"/>)},
 {name: "React", icon: (<FaReact className="icon"/>)},
 {name: "Redux", icon: (<SiRedux className="icon"/>)}
 ,{name: "TypeScript", icon: (<SiTypescript className="icon"/>)},]
+
+export const courses = [
+  {title: 'React Front To Back', platform: 'Udemy', technologies: ['React'], description: 'Learn Modern React 16.8+ Including Hooks, Context API, Full Stack MERN & Redux By Building Real Life Projects',icon: (<SiUdemy className="icon" />)},
+  {title: 'MERN Stack Front To Back', platform: 'Udemy', technologies: ['React', 'Redux', 'MongoDb', 'Nodejs', 'Express'], description: 'Build and deploy a social network with Node.js, Express, React, Redux & MongoDB. Fully updated April 2019',icon: (<SiUdemy className="icon" />)},
+  {title: 'Materialize CSS From Scratch', platform: 'Udemy', technologies: ['Materialize'], description: 'Master HTML 5 & the Materialize CSS framework by building 5 real world responsive material design based themes',icon: (<SiUdemy className="icon" />)},
+  {title: 'ASPNET Core and Angular From Scratch', platform: 'Udemy', technologies: ["ASPNET", "Angular"], description: 'A practical example of how to build an application with ASP.NET Core API (.Net 5.0) and Angular 10 from start to finish',icon: (<SiUdemy className="icon" />)},
+  {title: 'Angular Front To Back', platform: 'Udemy', technologies: ["Firebase", "Angular"], description: "Master Angular 5 from the basics to building an advanced application with Firebase's Firestore as well as authentication",icon: (<SiUdemy className="icon" />)},
+]

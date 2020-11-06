@@ -1,10 +1,11 @@
-import React, { useEffect, Fragment } from "react";
-import Card from "../Card";
+import React from "react";
 import theme from "../../theme/theme";
-import { BsCodeSlash } from "react-icons/bs";
 import { ProjectGrid } from "./PorjectSectionElements";
+
 import { SectionTitle, FlexSection } from "../../elements/globalElements";
 import { privateRepos } from "../../data/data";
+import ProjectCard from '../ProjectCard';
+import LivePreview from '../LivePreview';
 
 const ProjectsSection = ({ repoData }) => {
   const liveRepos = ["AuctionHouse"];
@@ -20,19 +21,22 @@ const ProjectsSection = ({ repoData }) => {
       <ProjectGrid>
         {repoData.map((repo, index) => {
           return (
-            <Card key={index} repo={repo}>
+            <ProjectCard key={index} repo={repo}>
               {repo.icon}
-            </Card>
+            </ProjectCard>
           );
         })}
         {privateRepos.map((repo, index) => {
           return (
-            <Card key={index} repo={repo}>
+            <ProjectCard key={index} repo={repo}>
               {repo.icon}
-            </Card>
+            </ProjectCard>
           );
         })}
       </ProjectGrid>
+      <br/>
+      <br/>
+      <LivePreview />
     </FlexSection>
   );
 };

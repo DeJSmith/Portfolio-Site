@@ -441,6 +441,7 @@ export const FlexSection = styled.section`
   margin-bottom: 5rem;
   width: 100%;
   text-align: left;
+  min-height: 100%;
 `;
 
 export const SkillsOrb = styled.div`

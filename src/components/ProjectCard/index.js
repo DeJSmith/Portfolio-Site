@@ -1,9 +1,9 @@
 import React from "react";
-import { ButtonOutline } from "../../elements/globalElements";
+import { ButtonOutline, TextWrapper } from "../../elements/globalElements";
 import theme from "../../theme/theme";
 import styled, { css, keyframes } from "styled-components";
 
-const Card = ({ children, course }) => {
+const ProjectCard = ({ children, repo }) => {
   const glow = keyframes`
     0% {
         
@@ -28,9 +28,9 @@ const Card = ({ children, course }) => {
 
   const CardStyled = styled.div`
     width: 100%;
-    max-width: 320px;
-    min-width: 250px;
-    height: 300px;
+    max-width: 500px;
+    min-width: 40px;
+    height: 630px;
     background-color: ${theme.colorPrimary};
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
@@ -43,8 +43,8 @@ const Card = ({ children, course }) => {
     align-items: center;
     flex-direction: column;
     transition: all 0.3s ease;
-    padding: 2rem 1rem 1rem 1rem;
-    ${live}
+    padding: 2rem;
+    ${(props) => (props.live ? live : "border: none;")};
 
     & .icon {
       margin: 0 auto;
@@ -66,7 +66,6 @@ const Card = ({ children, course }) => {
       transition: all 0.8s ease;
       background-position: 0px;
       background-size: 200px;
-      
     }
 
     & .title {
@@ -83,36 +82,23 @@ const Card = ({ children, course }) => {
 
     & .text {
       width: 100%;
-      margin: 0 auto;
       font-size: 1rem;
       text-align: left;
-      margin-top: 20px;
       color: white;
       font-weight: 200;
       letter-spacing: 2px;
-      opacity: 0;
-      max-height: 0;
-      transition: all 0.3s ease;
+      padding: 2rem;
+      
+      
     }
 
-    &:hover {
-      height: 420px;
-    }
 
     &:hover .title {
       text-shadow: 0px -2px 0px rgba(0, 0, 0, 1),
         0 0 5px rgba(255, 255, 255, 0.8), 0 -4px 15px rgba(255, 255, 255, 0.5);
+     
     }
 
-    &:hover .info {
-      height: 90%;
-    }
-
-    &:hover .text {
-      transition: all 0.3s ease;
-      opacity: 1;
-      max-height: 40px;
-    }
 
     &:hover .icon {
       background-position: -120px;
@@ -138,21 +124,41 @@ const Card = ({ children, course }) => {
   `;
 
   return (
-    <CardStyled {...course}>
+    <CardStyled {...repo}>
       {children}
 
-      <p className="title">{course.title}</p>
-
-      <div className="text">
-        {course.description}
-        <br />
-        <br />
-       
+      <p className="title">{repo.repoName}</p>
+      <TextWrapper style={{color: 'white'}} className="text">
+      <div >
+        <div style={{display: 'flex', justifyContent: 'center', margin: '2rem 0rem'}}>
+        {repo.live ? (
+          <a href={repo.live_url}>
+            <ButtonOutline>Veiw Site</ButtonOutline>
+          </a>
+        ) : null}
+        <a href={repo.html_url}>
           <ButtonOutline>Veiw Repo</ButtonOutline>
+        </a>
+        </div>
+      </div>
+
+      <div>
+      <div >
+          {repo.description}
+          </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid incidunt obcaecati quasi quam distinctio fuga explicabo minima non, unde dolor neque, dolores cum! Molestias cumque quae consectetur quidem quis?</p>
+      
+        <p>Technologies</p>
+        <ul>
+          {repo.technologies?.map((technology, index) => {
+            return (<li key={index}>{technology}</li>)
+          })}
+        </ul>
         
       </div>
-    </CardStyled>
+      </TextWrapper>
+    </CardStyled>   
   );
 };
 
-export default Card;
+export default ProjectCard;

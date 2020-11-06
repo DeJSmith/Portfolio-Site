@@ -58,12 +58,12 @@ const Nav = () => {
 
 
         <div>
-        <NavLink to="education" spy={true} smooth={true} duration={500}>
+        <NavLink to="skills" spy={true} smooth={true} duration={500}>
           <FaGraduationCap
             className="icon"
 
           />{" "}
-          <b className="text">Education</b>
+          <b className="text">Skills</b>
         </NavLink>
         </div>
 
